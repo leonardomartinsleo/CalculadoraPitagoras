@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pitágoras</title>
+</head>
+
+<body>
+    <div class="valores">
+        <p>Teorema de Pitágoras</p>
+        <table>
+            <tr>
+                <td>1ª Cateto : <input id="n1" min='1' type="number"></td>
+            </tr>
+            <tr>
+                <td>2ª Cateto : <input id="n2" min='1' type="number"></td>
+            </tr>
+            <tr>
+                <td>Hipotenusa : <input id="h1" min='1' type="number"></td>
+            </tr>
+        </table>
+        <div class="botoes">
+            <button onclick="calc()" value="calcular">Calcular</button>
+            <button onclick="location.reload()">Limpar</button>
+        <div class="resultados">
+            <span id="res">
+            </span>
+        </div>
+            
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
