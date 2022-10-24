@@ -1,45 +1,51 @@
-
-
-
+let cateto1 = document.getElementById("cateto1");
+let cateto2 = document.getElementById("cateto2");
+let hipotenusa = document.getElementById("hipotenusa");
+function limpar(){
+  let campos = [cateto1,cateto2,hipotenusa];
+  campos.forEach(campos => 
+    resp(campos,"#0276b0"))
+  cateto1.value = "";
+  cateto2.value = "";
+  hipotenusa.value = "";
+}
 function calc(){
-    var input = document.getElementById('n1');
-    var cateto1 = input.value;
-    var input = document.getElementById('n2');
-    var cateto2 = input.value;
-    var input = document.getElementById('h1');
-    var hipotenusa = input.value;
 
-    if(hipotenusa==''){
-      var h = Math.sqrt(Math.pow(cateto1,2)+Math.pow(cateto2,2));
+    if(hipotenusa.value==''){
+      var h = Math.sqrt(Math.pow(cateto1.value,2)+Math.pow(cateto2.value,2));
       var a = document.getElementById('res')
-      if(h==0 || h == cateto1 || h== cateto2 ){
+      if(h==0 || h == cateto1.value || h== cateto2.value ){
         alert('Com esses dados não é possível realizar o calculo da relação dos triângulos. Insira os valores corretamente!')
       }else{
-      a.innerHTML = "O valor da Hipotenusa é " + h.toFixed(2) + "!"
+      hipotenusa.value = h.toFixed(2);
+      resp(hipotenusa,"green")
       }
       
-    }else if(cateto1==''){
-        var h = Math.sqrt(Math.pow(hipotenusa,2)-Math.pow(cateto2,2))
-        var a = document.getElementById('res')
-        if(h==0 || h == cateto2 || h == hipotenusa ){
+    }else if(cateto1.value ==''){
+        var h = Math.sqrt(Math.pow(hipotenusa.value,2)-Math.pow(cateto2.value,2))
+        if(h==0 || h == cateto2.value || h == hipotenusa.value ){
             alert('Com esses dados não é possível realizar o calculo da relação dos triângulos. Insira os valores corretamente!')
           }else{
-        a.innerHTML = "O valor do 1° Cateto é " + h + "."
+        cateto1.value = h
+        resp(cateto1,"green")
     }
       
-    }else if(cateto2==''){
-        var h = Math.sqrt(Math.pow(hipotenusa,2)-Math.pow(cateto1,2))
-        var a = document.getElementById('res')
+    }else if(cateto2.value ==''){
+        var h = Math.sqrt(Math.pow(hipotenusa.value,2)-Math.pow(cateto1.value,2))
         if(h==0 ){
             alert('Com esses dados não é possível realizar o calculo da relação dos triângulos. Insira os valores corretamente!')
           }else{
-        a.innerHTML = "O valor do 2° Cateto é " + h + "!"
+        cateto2.value =h
+        resp(cateto2,"green")
     }
 
     }else{                          
         alert('Com esses dados não é possível realizar o calculo da relação dos triângulos. Insira os valores corretamente!')
     }
         
+}
+function resp(field,color){
+    field.style.borderColor = color;
 }
 
   

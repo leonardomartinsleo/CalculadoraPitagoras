@@ -1,39 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Pitágoras</title>
-</head>
-
-<body>
-    <div class="valores">
-        <p>Teorema de Pitágoras!!</p>
-        <table>
-            <tr>
-                <td>1ª Cateto : <input id="n1" min='1' type="number"></td>
-            </tr>
-            <tr>
-                <td>2ª Cateto : <input id="n2" min='1' type="number"></td>
-            </tr>
-            <tr>
-                <td>Hipotenusa : <input id="h1" min='1' type="number"></td>
-            </tr>
-        </table>
-        <div class="botoes">
-            <button onclick="calc()" value="calcular">Calcular</button>
-            <button onclick="location.reload()">Limpar</button>
-        <div class="resultados">
-            <span id="res">
-            </span>
+  </head>
+  <body>
+    <header>
+      <h1>Teorema de Pitágoras</h1>
+      <img
+        src="./imagem/statue-3754825_1280.jpg"
+        alt="estatua pitagoras"
+        class="fundo"
+      />
+    </header>
+    <main>
+      <div class="campos">
+        <div class="campo">
+          <span>Cateto 1</span>
+          <input type="number" name="cateto1" id="cateto1" class="valores" />
         </div>
-            
+        <span>+</span>
+        <div class="campo">
+          <span>Cateto 2</span>
+          <input type="number" name="cateto2" id="cateto2" class="valores" />
         </div>
+        <span>=</span>
+        <div class="campo">
+          <span>Hipotenusa</span>
+          <input
+            type="number"
+            name="hipotenusa"
+            id="hipotenusa"
+            class="valores"
+          />
+        </div>
+      </div>
+      <div class="botoes">
+        <button onclick="calc()" value="calcular">Calcular</button>
+        <button onclick="limpar()">Limpar</button>
+        <!-- <button onclick="location.reload()">Limpar</button> -->
+      </div>
+    </main>
+    <div class="rodape">
+        <footer>
+          <p>
+            "O quadrado da hipotenusa é igual à soma dos quadrados dos catetos."
+          </p>
+        </footer>
     </div>
     <script type="text/javascript" src="script.js"></script>
-</body>
-
+  </body>
 </html>
